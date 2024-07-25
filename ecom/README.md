@@ -13,7 +13,14 @@ go mod init github.com/PCD/ecom
 
 	> Instalar go get -u github.com/go-sql-driver/mysql
 
+- Para utilizar godotenv debe agregarse "github.com/joho/godotenv"
+
+	>go get github.com/joho/godotenv
+
 - Makefile es un archivo para agilizar tareas de build, testsy y run 
+
+
+
 
 
 

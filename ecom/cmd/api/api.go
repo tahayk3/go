@@ -9,11 +9,13 @@ import (
 	"github.com/gorilla/mux"
 )
 
+// Estructura para el servidor, addr: puerto en el que escucha el servidor, db: url a la que debe conectarse el servidor
 type APISserver struct {
 	addr string
 	db   *sql.DB
 }
 
+// Funcion para crear servidor
 func NewAPIServer(addr string, db *sql.DB) *APISserver {
 	return &APISserver{
 		addr: addr,
