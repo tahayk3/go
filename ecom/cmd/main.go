@@ -5,8 +5,9 @@ import (
 	"log"
 
 	"github.com/PCD/ecom/cmd/api"
-	"github.com/PCD/ecom/cmd/config"
-	"github.com/PCD/ecom/cmd/db"
+	"github.com/PCD/ecom/config"
+	"github.com/PCD/ecom/db"
+
 	"github.com/go-sql-driver/mysql"
 )
 

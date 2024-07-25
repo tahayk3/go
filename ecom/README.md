@@ -17,6 +17,11 @@ go mod init github.com/PCD/ecom
 
 	>go get github.com/joho/godotenv
 
+- Para utilizar bcrypt debe agregarse "golang.org/x/crypto/bcrypt"
+
+	>go get -u golang.org/x/crypto/bcrypt
+
+
 - Makefile es un archivo para agilizar tareas de build, testsy y run 
 
 
