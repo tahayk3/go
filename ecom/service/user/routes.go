@@ -42,7 +42,7 @@ func (h *Handler) handleRegister(w http.ResponseWriter, r *http.Request) {
 	// Validar el payload
 	if err := utils.Validate.Struct(payload); err != nil {
 		errors := err.(validator.ValidationErrors)
-		utils.WriteError(w, http.StatusBadRequest, fmt.Errorf("Carga util invalida: %v", errors))
+		utils.WriteError(w, http.StatusBadRequest, fmt.Errorf("Carga util invalida", errors))
 		return
 	}
 
