@@ -3,6 +3,7 @@ package config
 import (
 	"fmt"
 	"os"
+	"strconv"
 
 	"github.com/joho/godotenv"
 )
@@ -12,12 +13,14 @@ var Envs = initConfig()
 
 // Estructura para la configuracion a la conexion a la db
 type Config struct {
-	PublicHost string
-	Port       string
-	DBUser     string
-	DBPassword string
-	DBAddress  string
-	DBName     string
+	PublicHost             string
+	Port                   string
+	DBUser                 string
+	DBPassword             string
+	DBAddress              string
+	DBName                 string
+	JWTExpirationInSeconds int64
+	JWTSecret              string
 }
 
 // funcion que utiliza la estructura para crear la conexion a la db
@@ -31,6 +34,9 @@ func initConfig() Config {
 		DBPassword: getEnv("DB_PASSWORD", "1234"),
 		DBAddress:  fmt.Sprintf("%s:%s", getEnv("DB_HOST", "127.0.0.1"), getEnv("DB_PORT", "3306")),
 		DBName:     getEnv("DB_NAME", "ecom"),
+
+		JWTSecret:              getEnv("JWT_SECRET", "not-so-secret-now-is-it?"),
+		JWTExpirationInSeconds: getEnvAsInt("JWT_EXP", 3600*24*7),
 	}
 }
 
@@ -41,5 +47,21 @@ func getEnv(key, fallback string) string {
 		return value
 	}
 	// Devuelve el valor por defecto si la variable de entorno no está configurada
+	return fallback
+}
+
+// Obtener el valor de una variable de entorno y convertirlo a un entero de 64 bits
+func getEnvAsInt(key string, fallback int64) int64 {
+	//LookupEnv buscar la variable de entorno especificada por key, si no existe, usa la que esta por defecto
+	if value, ok := os.LookupEnv(key); ok {
+		//Conversion a entero
+		i, err := strconv.ParseInt(value, 10, 64)
+		if err != nil {
+			return fallback
+		}
+
+		return i
+	}
+
 	return fallback
 }

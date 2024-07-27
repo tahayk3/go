@@ -21,6 +21,14 @@ go mod init github.com/PCD/ecom
 
 	>go get -u golang.org/x/crypto/bcrypt
 
+- Para utilizar jwt debe agregarse "github.com/golang-jwt/jwt"
+
+	>go get -u github.com/golang-jwt/jwt 
+
+- Para utilizar jwt debe agregarse "github.com/golang-jwt/jwt/v5"
+
+	>go get -u github.com/golang-jwt/jwt/v5 
+
 
 - Makefile es un archivo para agilizar tareas de build, testsy y run 
 

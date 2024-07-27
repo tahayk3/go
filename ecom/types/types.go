@@ -10,6 +10,7 @@ type UserStore interface {
 	CreateUser(User) error
 }
 
+// Estructura para el usuario
 type User struct {
 	ID        int       `json:"id"`
 	FirstName string    `json:"firstName"`
@@ -19,9 +20,16 @@ type User struct {
 	CreatedAt time.Time `json:"createdAt"`
 }
 
+// Estructura para el registro de usuarios
 type RegisterUserPayload struct {
 	FirstName string `json:"firstName" validate:"required"`
 	LastName  string `json:"lastName" validate:"required"`
 	Email     string `json:"email" validate:"required,email"`
 	Password  string `json:"password" validate:"required,min=3,max=130"`
+}
+
+// Registro para el login de usuarios
+type LoginUserPayload struct {
+	Email    string `json:"email" validate:"required,email"`
+	Password string `json:"password" validate:"required"`
 }
