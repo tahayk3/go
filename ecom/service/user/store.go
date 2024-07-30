@@ -73,7 +73,7 @@ func (s *Store) GetUserByID(id int) (*types.User, error) {
 	}
 
 	if u.ID == 0 {
-		return nil, fmt.Errorf("Usuario no encontrado")
+		return nil, fmt.Errorf("user not found")
 	}
 
 	return u, nil

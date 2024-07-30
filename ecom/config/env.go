@@ -36,7 +36,7 @@ func initConfig() Config {
 		DBName:     getEnv("DB_NAME", "ecom"),
 
 		JWTSecret:              getEnv("JWT_SECRET", "not-so-secret-now-is-it?"),
-		JWTExpirationInSeconds: getEnvAsInt("JWT_EXP", 3600*24*7),
+		JWTExpirationInSeconds: getEnvAsInt("JWT_EXPIRATION_IN_SECONDS", 3600*24*7),
 	}
 }
 
