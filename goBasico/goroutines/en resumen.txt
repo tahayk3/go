@@ -1,0 +1,16 @@
+Creas una goroutine: Usando la palabra clave go seguida de una función.
+
+Creas un canal: Con la función make(chan tipo_de_dato).
+
+Envías datos al canal: Usando el operador <- a la izquierda del canal.
+
+Recibes datos del canal: Usando el operador <- a la derecha del canal.
+
+Es importante cerrar el canal cuando termine de usarse: close(nombreDelCanal)
+
+Patrones Comunes
+
+Worker Pool: Un patrón común donde múltiples goroutines realizan tareas en paralelo y envían sus resultados a través de un canal.
+
+Pipeline: Una serie de goroutines donde cada goroutine realiza una parte del procesamiento de datos y pasa el resultado a la siguiente 
+goroutine a través de canales.
