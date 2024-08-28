@@ -1,0 +1,4 @@
+Cuando defines un método para una estructura, puedes usar un receptor de valor o un receptor de puntero.
+La elección depende de si quieres modificar la estructura o no, y del tamaño de la estructura.
+
+
