@@ -1,5 +1,6 @@
 /*
-Una goroutine es una función que se ejecuta de manera concurrente con otras goroutines en el mismo espacio de direcciones.
+Una goroutine es una función que se ejecuta de manera concurrente con otras goroutines
+en el mismo espacio de direcciones.
 Son más ligeras que los hilos (threads) y están diseñadas para ser fáciles de usar.
 */
 package main
