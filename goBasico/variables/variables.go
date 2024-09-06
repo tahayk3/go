@@ -4,6 +4,7 @@ import "fmt"
 
 func main() {
 	//Formas de declarar una variable en go(strings)
+	//Cuando se definen una variable con var, el alcance(scope) no es solo del bloque
 	var primeraForma string = "texto 1"
 	var segundaForma = "texto 2"
 	terceraForma := "texto 3"
